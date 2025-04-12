@@ -1,0 +1,346 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: "Jost", sans-serif;
+
+
+
+}
+
+
+:root {
+    --background-color1: #030303;
+    --background-color2: rgb(20, 20, 20);
+    --boton-color: #D9B855;
+    --datos-color: rgb(235, 235, 235);
+    --texto-color: rgb(255, 255, 255);
+    --color-2: rgb(254, 246, 152);
+
+  }
+
+
+body{
+    background-color: var(--background-color1);
+
+}
+
+#reserv{
+  height: 750px;
+  width: 100%;
+}
+
+.Boton{
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+
+.Boton button{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 50px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  background-color: var(--boton-color);
+
+}
+
+
+.Reservacion{
+  font-size: 3.2rem;
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--texto-color);
+    font-weight: 800;
+
+}
+
+section.datos div{
+  justify-content: center;
+  background-color: #D9B855;
+
+}
+
+.Datos div input {
+    height: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    border-color: rgba(255, 255, 255, 0);
+    align-self: center;
+    width: 90%;
+
+
+}
+
+.Datos div select{
+    height: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    border-color: rgba(255, 255, 255, 0);
+    width: 90%;
+    align-self: center;
+
+
+}
+
+.Datos div p{
+
+    font-size: 16px;
+    margin-left: 5%;
+    margin-top: 10px;
+    color: #D9B855;
+
+} 
+
+.Reservacion{
+  font-size: 50px;
+  justify-content: center;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--texto-color)
+
+}
+
+
+.Boton button{
+  font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height: 60px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    background-color: var(--boton-color);
+
+}
+
+
+section.Datos div{
+  display: flex;
+  align-self: center;
+  
+  
+}  
+  
+.Datos div{
+  background-color: var(--background-color1);
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 60%;
+  margin-left: 20%;
+
+}
+
+
+.Datos div input {
+    background-color: var(--datos-color);
+    height: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-color: rgba(255, 255, 255, 0); 
+
+}
+
+.Datos div select{
+    background-color: var(--datos-color);
+    height: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-color: rgba(255, 255, 255, 0);
+
+
+}
+
+.Datos div p{
+
+  text-align: left;
+  font-size: 16px;
+  margin-left: 5%;
+  margin-top: 10px;
+  color: #FBD389;
+  
+
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+}
+
+.navbar.scrolled {
+  background-color: #030303;
+}
+
+.navbar img {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #D9B855;
+  transition: width 0.5s ease;
+  transform-origin: center;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+  display: none; 
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 20px; 
+    
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 644px) {
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    background-color: #030303;
+    position: absolute;
+    top: 60px; 
+    right: 0;
+    width: 30%;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 1001;    
+  }
+
+  .nav-links.show {
+    display: flex; 
+  }
+
+  .nav-links a {
+    padding: 0.7rem 0;
+    margin: 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-links a::after {
+    display: none; 
+  }
+
+  .menu-toggle {
+    display: flex; 
+    z-index: 1002; 
+  }
+
+  .footer-links-left {
+    display: flex;
+    flex-direction: column; 
+    align-items: start; 
+    width: 50%; 
+    margin-bottom: 10px; 
+    order: -1; 
+  }
+
+  .footer-links-right{
+    display: flex;
+    flex-direction: column; 
+    align-items:end ; 
+    width: 50%; 
+    margin-bottom: 10px; 
+    order: -1;
+  }
+
+  .footer-logo {
+    width: 100%; 
+    text-align: center; 
+  }
+}
+
+
+
+/* FOOOOOTTTRRRETTTR */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  padding: 2rem;
+  font-family: "Jost", sans-serif;
+  font-weight: 400
+}
+
+.footer-links-left,
+.footer-links-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  text-align: center;
+  flex: 1;
+}
+
+.footer-links-right a,
+.footer-links-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
