@@ -1,0 +1,425 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-principal: #0D0D0D; /* Fondo principal */
+}
+
+
+
+html {
+  background-color: var(--color-principal);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+}
+
+.navbar.scrolled {
+  background-color: #030303;
+}
+
+.navbar img {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #D9B855;
+  transition: width 0.5s ease;
+  transform-origin: center;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+  display: none; 
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 20px; 
+    
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+
+body {
+  background-color: var(--color-secundario);
+  font-family: "Jost", sans-serif;
+  width: 100%;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  flex: 1;
+}
+
+main {
+  margin: 0 auto;
+  width: 100%;
+  background-color: var(--color-principal);
+}
+
+.titulo {
+  padding-top:50px;
+  color: white;
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+
+.titulo p {
+  font-size: 32px;
+  color: white;
+  background-color: var(--color-principal);
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color-principal);
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.formulario label {
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: var(--color-principal);
+  color: white;
+  resize: none;
+  font-family: "Jost", sans-serif;
+}
+
+.formulario textarea {
+  height: 120px;
+}
+
+button {
+  background-color: #deba4d;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: "Jost", sans-serif;
+}
+
+button:hover {
+  background-color: #cfae3f;
+}
+
+.mensaje-importante {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 400
+}
+
+form {
+  background-color: var(--color-principal);
+  padding: 0;
+  margin: 0 auto;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: none;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+
+
+input:focus, textarea:focus {
+  border-color: #cfae3f;
+  outline: none;
+}
+
+.mensaje-exito {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mensaje-exito {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 644px) {
+  .nav-links {
+    display: none; 
+    flex-direction: column; 
+    background-color: #030303;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 30%; 
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 1001;
+  }
+
+  .nav-links.show {
+    display: flex; /
+  }
+
+  .nav-links a {
+    padding: 0.7rem 0;
+    margin: 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex; 
+    z-index: 1002;
+  }
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  padding: 2rem;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+}
+
+.footer-links-left,
+.footer-links-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  text-align: center;
+  flex: 1;
+}
+
+.footer-links-right a,
+.footer-links-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+@media (max-width: 644px) {
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    background-color: #030303;
+    position: absolute;
+    top: 60px; 
+    right: 0;
+    width: 30%;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 1001;    
+}
+
+  .nav-links.show {
+    display: flex; 
+  }
+
+  .nav-links a {
+    padding: 0.7rem 0;
+    margin: 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-links a::after {
+    display: none; 
+  }
+
+  .menu-toggle {
+    display: flex; 
+    z-index: 1002; 
+  }
+
+  .footer-links-left {
+    display: flex;
+    flex-direction: column; 
+    align-items: start; 
+    width: 50%; 
+    margin-bottom: 10px; 
+    order: -1; 
+  }
+
+  .footer-links-right{
+    display: flex;
+    flex-direction: column; 
+    align-items:end ; 
+    width: 50%; 
+    margin-bottom: 10px; 
+    order: -1;
+  }
+
+  .footer-logo {
+    width: 100%; 
+    text-align: center; 
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    max-width: 90%;
+    padding: 0 20px;
+  }
+
+  .titulo p {
+    font-size: 28px;
+  }
+
+  .formulario label {
+    font-size: 16px;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .mensaje-importante {
+    font-size: 16px;
+  }
+
+  
+}
+
+  main { 
+    padding: 0 40px;  
+  }
+
+  .titulo p {
+    font-size: 35px; 
+  }
+
+  .formulario {
+    padding: 0 20px;
+  }
+
+  .formulario label {
+    font-size: 20px;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 18px;
+  }
+
+  .mensaje-importante {
+    font-size: 20px;
+  }
